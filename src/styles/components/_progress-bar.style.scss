@@ -1,0 +1,29 @@
+@use '../basic.style';
+
+.progress-bar{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+   // background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem;
+    background-image: conic-gradient(rgb(228, 193, 246) 0, gray 0);
+
+    .content{
+        height: 100%;
+        width: 100%;
+        margin: auto;
+     //   margin: 0.2rem;
+        background-color: basic.$darkColor;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img{
+        height: 27px;
+    }
+}

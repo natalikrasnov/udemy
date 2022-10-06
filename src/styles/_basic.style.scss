@@ -1,0 +1,52 @@
+$darkColor: rgba(0, 0, 0, 0.9);
+
+@mixin mobile {
+    @media (min-width: 700px) {
+        @content;
+    }
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.icon{
+    height: 50px;
+    min-width: 100px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.dark {
+    background-color: $darkColor;
+    color: white;
+
+    .icon{
+        background-image: url('https://www.udemy.com/staticx/udemy/images/v7/logo-udemy-inverted.svg');
+    }
+}
+
+.light{
+    background-color: white;
+    color: black;
+    
+    .icon {
+        background-image: url('https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg');
+    }
+    
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.separator{
+    color: white;
+    opacity: 0.2;
+    font-size: 2rem !important;
+}
+
+.link{
+    cursor: pointer;
+}

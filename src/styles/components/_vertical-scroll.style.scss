@@ -1,0 +1,11 @@
+.vertical-scroll-pages{
+    position: relative;
+    margin: 2rem 0;
+
+    .scroll_content{
+        display: flex;
+        gap: 1rem;
+        padding: 0;
+        overflow-x: hidden;
+    }
+}

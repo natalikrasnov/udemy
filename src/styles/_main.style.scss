@@ -1,0 +1,18 @@
+@use './basic.style';
+
+@use './components/footer.style';
+@use './components/arrow-button.style';
+@use './components/header.style';
+@use './components/input.style';
+@use './components/popup-modal.style';
+@use './components/vertical-scroll.style';
+@use './components/banner.style';
+@use './components/card-course.style';
+@use './components/card-new-course.style';
+@use './components/progress-bar.style';
+@use './components/video-player.style';
+
+
+@use './pages/course/course.style';
+
+@use './pages/main/main.style';
