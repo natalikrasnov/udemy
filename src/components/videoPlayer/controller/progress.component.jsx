@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { VideoPlayerContext } from "../../hookes/contexts/VideoPlayer.context"
+import { VideoPlayerContext } from "../../../hookes/contexts/VideoPlayer.context"
 
 export function Progress({ }) {
     const { videoRef, videoCurrentTime, setVideoCurrentTime

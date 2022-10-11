@@ -2,8 +2,8 @@ import clip from '../../assets/meduza-james-carter-bad-memories-lyric-video.mp4'
 import { useContext } from 'react';
 import { VideoPlayerContext } from '../../hookes/contexts/VideoPlayer.context';
 import { Video } from './Video.component';
-import { VideoActionsController } from './VideoActionsController.component';
-import { PlayButton } from './PlayButton.component';
+import { VideoActionsController } from './controller/actionsController/VideoActionsController.component';
+import { PlayButton } from './controller/PlayButton.component';
 
 export function VideoPlayer({ video=clip/*url */ , title="1. meduza"}) {
     const { videoControlRef,playButtonRef} = useContext(VideoPlayerContext)

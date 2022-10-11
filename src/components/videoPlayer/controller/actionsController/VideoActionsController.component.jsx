@@ -1,6 +1,6 @@
 import { useContext } from "react"
-import { VideoPlayerContext } from "../../hookes/contexts/VideoPlayer.context"
-import { Progress } from "./progress.component"
+import { VideoPlayerContext } from "../../../../hookes/contexts/VideoPlayer.context"
+import { Progress } from "../progress.component"
 import { VideoActions } from "./VideoActions.component"
 
 export function VideoActionsController({ }) {

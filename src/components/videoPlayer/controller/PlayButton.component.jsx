@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { VideoPlayerContext } from "../../hookes/contexts/VideoPlayer.context"
+import { VideoPlayerContext } from "../../../hookes/contexts/VideoPlayer.context"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export function PlayButton({ }) {
