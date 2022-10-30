@@ -4,12 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export function VolumeButton() {
     
-    const {
-        setCurrentVolume,
-        videoRef,
-        currentVolume
-    } = useContext(VideoPlayerContext)
-    
+    const {videoRef} = useContext(VideoPlayerContext)
+    const [currentVolume, setCurrentVolume] = useState(1)//0.0 - 1.0
     const [isOpenVolumeControl, setIsOpenVolumeControl] = useState(false)
    
     const setVolume = (event) => {

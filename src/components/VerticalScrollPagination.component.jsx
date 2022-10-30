@@ -4,41 +4,69 @@ import { useState } from "react"
 import { ArrowButton } from "./ArrowButton.component"
 
 export function VerticalScrollPagination({children}) {
-    // const [tabCurrentData, setTabCurrentData] = useState(childrenComponents && childrenComponents.length > 1 ? childrenComponents[0] : null)
-    // const [currentData, setCurrentData] = useState()
 
-    const [isCanScrollRight,setIsCanScrollRight] = useState(true)
-    const [isCanScrollLeft, setIsCanScrollLeft] = useState(true)
-    
+    const [isCanScrollRight,setIsCanScrollRight] = useState(false)
+    const [isCanScrollLeft, setIsCanScrollLeft] = useState(false)
+    const [elementWith, setElementWith] = useState(null)
+    const [remainderScrollLeft, setRemainderScrollLeft] = useState(null)
+    const [sumScrolling, setSumScrolling] = useState(null)
+
     const scrollRef = useRef()
 
-    useEffect(()=> setScrollingButtons(), [scrollRef])
+    const setResize = () => {
+        if (!scrollRef.current) return
+        setTimeout(() => {
+            setElementWith(scrollRef.current.offsetWidth) 
+            setRemainderScrollLeft (scrollRef.current.scrollLeft)
+            setSumScrolling( scrollRef.current.scrollWidth)
+        },500)
+        
+    }
+
+    useEffect(() => {
+        window.addEventListener("resize", setResize);
+        return (()=> window.removeEventListener("resize", setResize))
+    }, [])
+
+    
+    useEffect(() => {
+        // console.log("elementWidth=", elementWith)
+        // console.log("remainderScrollLeft=",remainderScrollLeft)
+        // console.log("sumScrolling=", sumScrolling)
+        setScrollingButtons()
+    }, [elementWith, remainderScrollLeft])
 
     const setScrollingButtons = () => {
-        //debugger
+        // if(elementWith === sumScrolling && elementWith!=null) return
+        if (sumScrolling == null || elementWith == null) {
+            setResize()
+            return
+        } 
         setIsCanScrollLeft(true)
         setIsCanScrollRight(true)
-        if (scrollRef.current.scrollLeft == 0) setIsCanScrollLeft(false)
-        else if (scrollRef.current.scrollLeft < scrollRef.current.offsetWidth)
+        if (remainderScrollLeft === 0)
+            setIsCanScrollLeft(false)
+        if ( (remainderScrollLeft + elementWith) === sumScrolling)
             setIsCanScrollRight(false)  
+        
+    }
+
+    const scroll = (scrollTo) => {
+        scrollRef.current.scrollTo({
+            left: scrollTo,
+            behavior: 'smooth'
+        });
+      setResize()
     }
 
     const scrollToRight = () => {
-        const scrollTo =  scrollRef.current.offsetWidth+scrollRef.current.offsetWidth
-        scrollRef.current.scrollTo({
-            left: scrollTo,
-            behavior: 'smooth',
-        });
-        setScrollingButtons()
+        const scrollTo = remainderScrollLeft + elementWith
+        scroll(scrollTo)
     }
 
     const scrollToLeft = () => {
-       const scrollTo =  scrollRef.current.offsetWidth-scrollRef.current.offsetWidth
-        scrollRef.current.scrollTo({
-            left: scrollTo,
-            behavior: 'smooth',
-        });
-       setScrollingButtons()
+       const scrollTo =  remainderScrollLeft < elementWith ? 0 : remainderScrollLeft - elementWith
+       scroll(scrollTo)
     }
     
     return (

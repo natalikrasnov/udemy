@@ -1,0 +1,69 @@
+.course-main{
+    min-width: 640px;
+}
+.course-content{
+    max-width: 1000px;
+    margin: 0 auto;
+    .course-content_links{
+        padding: 0 2rem;
+    //    border-bottom: 1px solid gray;
+        
+        margin: 0 auto;
+        width: 100%;
+        min-height: max-content !important;
+      
+        a{
+            color: gray; 
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 1rem;
+            white-space: nowrap;
+            
+            &:hover{
+                color:rgb(14, 13, 13) ;
+            }
+           
+        }
+
+        .search{
+            font-size: 2rem;
+        }
+
+        .active{
+            color: rgb(14, 13, 13);
+            border-bottom: 2px solid rgb(48, 48, 48);
+        }
+
+        .vertical-scroll-pages{
+            margin: 0;
+
+            .arrow-button{
+                background-color: rgba(255, 255, 255, 0.9);
+                color: purple;
+                border: none;
+                outline: none;
+            }
+        }
+       
+    }
+
+    .line{
+        position: relative;
+        bottom: 1px;
+        z-index: -5;
+    }
+
+    &>div{
+        min-height: 100px;
+    }
+}
+
+
+.questions{
+    padding: 3rem;
+    margin: auto;
+
+    .link{
+        margin: 0 0.2rem;
+    }
+}

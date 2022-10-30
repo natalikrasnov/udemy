@@ -11,8 +11,15 @@
 @use './components/card-new-course.style';
 @use './components/progress-bar.style';
 @use './components/video-player.style';
+@use './components/text-editor.style';
 
+@use './pages/course/courseContent/announcements.style';
+@use './pages/course/courseContent/course-content.style';
+@use './pages/course/courseContent/learningTools.style';
+@use './pages/course/courseContent/overview.style';
+@use './pages/course/courseContent/reviews.style';
+@use './pages/course/courseContent/search.style';
+@use './pages/course/courseContent/notes.style';
 
-@use './pages/course/course.style';
 
 @use './pages/main/main.style';

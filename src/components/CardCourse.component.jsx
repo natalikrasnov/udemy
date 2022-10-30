@@ -4,7 +4,7 @@ export function CardCourse({ id }) {
     const navigate = useNavigate()
 
     const goToCoursePage = () => {
-        navigate('/course', {state: {id}})
+        navigate('/course/overview', {state: {id}})
     }
 
     return (

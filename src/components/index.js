@@ -10,6 +10,7 @@ import { CardCourse } from './CardCourse.component'
 import { CardNewCourse } from './CardNewCourse.component'
 import { ProgressBar } from "./ProgressBar.component";
 import { VideoPlayer } from "./videoPlayer/VideoPlayer.component";
+import { TextEditor } from "./TextEditor.component";
 
 export {
   // ArrowButton,
@@ -23,6 +24,7 @@ export {
     CardCourse,
     CardNewCourse,
   ProgressBar,
-    VideoPlayer
+  VideoPlayer,
+    TextEditor
 };
 

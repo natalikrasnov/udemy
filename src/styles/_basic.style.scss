@@ -50,3 +50,14 @@ $darkColor: rgba(0, 0, 0, 0.9);
 .link{
     cursor: pointer;
 }
+
+.line{
+    height: 1px;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.281);
+}
+
+.error-page{
+    text-align: center;
+    min-height: 400px;
+}

@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export function Input({ placeholder, searchFunc }) {
+export function Input({ placeholder, searchFunc , isSearch=true}) {
     const [inputText, setInputText] = useState("")
 
     const onChangeInput = (e) => {
@@ -9,7 +9,7 @@ export function Input({ placeholder, searchFunc }) {
 
     return (
         <form onSubmit={searchFunc} className="input">
-            <button disabled={ !inputText }>⌕</button>
+            {isSearch && <button disabled={ !inputText } type="submit">⌕</button>}
             <input placeholder={placeholder} onChange={onChangeInput} value={ inputText } />
         </form>
     )

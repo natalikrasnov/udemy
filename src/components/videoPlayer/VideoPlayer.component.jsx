@@ -8,14 +8,12 @@ import { PlayButton } from './controller/PlayButton.component';
 export function VideoPlayer({ video=clip/*url */ , title="1. meduza"}) {
     const { videoControlRef,playButtonRef} = useContext(VideoPlayerContext)
 
-    console.log("render")
-    
     const addToggleClass = (eventNode, className, time = 0) => {
         if(className) eventNode.classList.add(className)
         setTimeout(()=>{
             if(className) eventNode.classList.remove(className)
-            playButtonRef.current.classList.add('play-none')
-            videoControlRef.current.classList.remove('play-display')
+            playButtonRef.current && playButtonRef.current.classList.add('play-none')
+            videoControlRef.current && videoControlRef.current.classList.remove('play-display')
         }, time)   
     }
 

@@ -8,19 +8,19 @@ import { ForwardsButton } from "./actions/left/ForwardsButton.component"
 import { SpeedButton } from "./actions/left/SpeedButton.component"
 import { VolumeButton } from "./actions/right/VolumeButton.component"
 import { FullScreenButton } from "./actions/right/FullScreenButton.component"
+import { useNavigate } from "react-router-dom"
 
 export function VideoActions() {
+    const {videoCurrentTime, videoRef} = useContext(VideoPlayerContext)
 
-    const {
-        videoCurrentTime,
-        videoDuration,
-    } = useContext(VideoPlayerContext)
+    const navigate = useNavigate()
+    const videoDuration = videoRef?.current?.duration
 
     const addNotes = () => {
-        //navigate ('/notes', {state:{currentTime}})
+        navigate ('/course#notes')
     }
     const addTranscript = () => {
-        //navigate ('/transcript', {state:{currentTime}})
+        // navigate ('/transcript', {state:{currentTime}})
     }
 
     return (

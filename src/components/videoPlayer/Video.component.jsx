@@ -11,12 +11,12 @@ export function Video({ url, videoEnded }) {
     
     return (
             <video 
-                src={url}
-                ref={videoRef}
-                muted={currentVolume === 0}
-                onEnded={videoEnded}
-                onClick={setVideoPlayState}
-                onTimeUpdate ={updateVideoCurrentTime}
+            src={url}
+            ref={videoRef}
+            muted={currentVolume === 0}
+            onEnded={videoEnded}
+            onClick={setVideoPlayState}
+            onTimeUpdate={updateVideoCurrentTime}
             />
     )
 }

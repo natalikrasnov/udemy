@@ -1,0 +1,62 @@
+.text-editor {
+    border: 1px solid black;
+    min-height: 70%;
+    max-width: 90%;
+    overflow-y: auto;
+    position: relative;
+    overflow-x: break-word;
+
+    
+    .toolbar-class{
+        border: none;
+        margin: 0;
+        border-bottom: 1px solid black;
+
+        .rdw-dropdown-wrapper,
+        .rdw-option-wrapper{
+            border: none;
+            box-shadow: none;
+        }
+
+        .rdw-option-active{
+            box-shadow: none;
+            background-color: rgba(0, 0, 0, 0.397);
+            color: white;
+        }
+
+        div[title="Underline"],
+        div[title="Strikethrough"],
+        div[title="Superscript"],
+        div[title="Subscript"],
+        div[aria-label="rdw-font-size-control"],
+        div[aria-label="rdw-font-family-control"],
+        div[title="Indent"],
+        div[title="Outdent"],
+        div[aria-label="rdw-textalign-control"],
+        div[title="Color Picker"],
+        div[aria-label="rdw-link-control"],
+        div[aria-label="rdw-embedded-control"],
+        div[title="Emoji"],
+        div[aria-label="rdw-image-control"],
+        div[aria-label="rdw-remove-control"],
+        div[aria-label="rdw-history-control"]{
+            display: none;
+        }
+
+    }
+
+    .editor{
+
+    }
+
+    .counter{
+        color: gray;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+.red{
+    color: rgb(177, 4, 4) !important;
+}

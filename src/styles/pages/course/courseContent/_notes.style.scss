@@ -1,0 +1,105 @@
+.notes_content{
+    padding: 3rem;
+
+    .table{
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .edit-note{
+        .time{
+            border-radius: 30px;
+            padding: 0.3rem 0.6rem;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .notes_content-text_edit{
+            width: 100%;
+           min-height: 200px;
+        }
+
+        .buttons{
+            margin-top: 2rem;
+            display: flex;
+            justify-content: flex-end;
+            
+            .cancel,
+            .dark{
+                font-weight: bold;
+                border-radius: 0;
+                border: none;
+                outline: none;
+                padding: 0.6rem 0.8rem;
+            } 
+            .cancel{
+                background-color: transparent;
+                color: rgb(45, 45, 45);
+            }
+            .dark:hover{
+                background-color: black;
+            }
+        }
+    }
+    
+    .add-note{
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid black;
+        padding: 1rem;
+        cursor: pointer;
+
+        &:hover{
+            background-color: rgba(128, 128, 128, 0.1);
+        }
+
+        .text{
+            font-size: 1.2rem;
+            color: gray;
+            cursor: pointer;
+        }
+        .add{
+            border-radius: 50%;
+            // font-weight: bold;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+    }
+
+    .filters{
+        display: flex;
+        margin-top: 1rem;
+        gap: 1rem;
+        font-weight: bold;
+        
+        .filter{
+            cursor: pointer;
+        }
+        >.filter{
+            padding: 0.7rem 1rem;
+            border: 1px solid black;
+        
+            &:hover{
+                background-color: rgba(128, 128, 128, 0.1);
+            }
+        }
+
+        ul{
+            list-style: none;
+
+            li:hover{
+
+            }
+        }
+    }
+
+    .center{
+        margin: 80px auto;
+        text-align: center;
+    }
+}
